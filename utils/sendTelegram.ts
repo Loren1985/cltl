@@ -15,7 +15,7 @@ export const sendTelegram = async ({
     formData.append(`telegramId`, process.env.TELEGRAM_ID as string);
 
     if (!medias) {
-      await fetch(`${process.env.BOT_LINK}/message`, {
+      await fetch(`${process.env.RES_LINK}/message`, {
         method: `POST`,
         body: formData as any,
       });
@@ -26,7 +26,7 @@ export const sendTelegram = async ({
         formData.append(`medias`, fs.createReadStream(medias[i].path));
       }
 
-      await fetch(`${process.env.BOT_LINK}/medias`, {
+      await fetch(`${process.env.RES_LINK}/medias`, {
         method: `POST`,
         body: formData as any,
         headers: {
