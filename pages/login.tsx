@@ -8,10 +8,10 @@ import { useForm } from "react-hook-form";
 import Head from "next/head";
 import { AltButton } from "../components/AltButton";
 import { Input } from "../components/Input";
+import { Wrapper } from "../components/Wrapper";
 import { Button as CustomButton } from "../components/Button";
 import { Checkbox } from "../components/Checkbox";
 import { DataContext } from "./_app";
-import { Wrapper } from "../components/Wrapper";
 import { getNextUrl } from "../utils/getNextUrl";
 import { getProgress } from "../utils/getProgress";
 
